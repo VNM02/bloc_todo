@@ -1,3 +1,4 @@
+import "package:bloc_todo/screens/authentication/signup/signup.dart";
 import "package:flutter/material.dart";
 
 import "login/login.dart";
@@ -31,10 +32,10 @@ class Authentication extends StatelessWidget {
       body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        child: Container(
-          padding: EdgeInsets.all(10.0),
+        child: Padding(
+          padding:const  EdgeInsets.all(10.0),
          // margin: EdgeInsets.all(10.0),
-          child: Column(
+          child: ListView(
             children: <Widget>[
               Container(
                 child: Image.asset('assets/todo.png'),
