@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 
 class AddTask extends StatelessWidget {
   const AddTask({super.key});
+  static TextEditingController titleController=TextEditingController();
+  static TextEditingController descController=TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Todo App'
@@ -25,7 +28,52 @@ class AddTask extends StatelessWidget {
         ),
         elevation: 0.00,
       ),
-      body: Container(),
+      body: Container(
+        padding: EdgeInsets.all(10.0),
+        child: Column(
+          children: <Widget>[
+            Container(
+              child: TextFormField(
+                controller: titleController,
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                  labelText: 'Title',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height:10),
+            Container(
+              child: TextFormField(
+                controller: descController,
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                  labelText: 'Description',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height:10),
+            Container(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: (){},
+                child: Text(
+                  'Add Task',
+                  style:TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30.0,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
